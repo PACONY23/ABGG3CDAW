@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Invertir Lista Ordenada</title>
+</head>
+<body>
+    <ol id="ordenLista">
+        <li>Universidad Tecnológica Emiliano Zapata del Estado de Morelos</li>
+        <li>Universidad Autónoma del Estado de Morelos</li>
+        <li>Universidad Politécnica del Estado de Morelos</li>
+        <li> Instituto Tecnológico de Zacatepec</li>
+
+    </ol>
+
+    <button onclick="reverseOrderedList()">Invertir Lista Ordenada</button>
+
+    <script>
+        function reverseOrderedList() {
+            const list = document.getElementById('ordenLista');
+            const items = Array.from(list.children);
+            list.innerHTML = '';
+            items.reverse().forEach(item => list.appendChild(item));
+        }
+    </script>
+</body>
+</html>
+
