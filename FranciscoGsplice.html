@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de splice() en JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            color: #333;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #output {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #555;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            width: 80%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Ejemplo de splice</h1>
+    <button id="eliminar">Eliminar elementos</button>
+    <button id="anadir">Añadir elementos</button>
+    <button id="reemplazar">Reemplazar elementos</button>
+
+    <div id="output"></div>
+    <br>
+    <label>'El método splice() en JavaScript modifica un array añadiendo, eliminando o reemplazando elementos.'</label>
+    <script>
+        let numeros = [1, 2, 3, 4, 5, 6];
+
+        function mostrarArray() {
+            document.getElementById('output').innerText = 'Array actual: [' + numeros.join(', ') + ']';
+        }
+
+        document.getElementById('eliminar').addEventListener('click', function() {
+            numeros.splice(2, 2);
+            mostrarArray();
+        });
+
+        document.getElementById('anadir').addEventListener('click', function() {
+            numeros.splice(2, 0, 7, 8);
+            mostrarArray();
+        });
+
+        document.getElementById('reemplazar').addEventListener('click', function() {
+            numeros.splice(2, 2, 9, 10);
+            mostrarArray();
+        });
+
+        // Mostrar el array inicial al cargar la página
+        mostrarArray();
+    </script>
+
+
+
+</body>
+</html>
